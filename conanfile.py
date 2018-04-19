@@ -52,7 +52,7 @@ class CppPlayground(ConanFile):
         gen_extra_args += ['-DBUILD_SHARED_LIBS=ON'] if self.options.shared else ['-DBUILD_SHARED_LIBS=OFF']
         gen_extra_args += [f'-DCMAKE_CXX_FLAGS=\"{cmake_cxx_flags}\"']
         gen_extra_args = ' '.join(gen_extra_args)
-        self.run('cmake "{:s}" {:s} {:s}'.format(self.conanfile_directory, cmake.command_line, gen_extra_args))
+        self.run('cmake "{:s}" {:s} {:s}'.format(self.source_folder, cmake.command_line, gen_extra_args))
 
         build_extra_args = list()
         build_extra_args += ['-- -j -k'] if self.settings.compiler in ['gcc', 'clang'] else ['']
