@@ -1,0 +1,6 @@
+project(main)
+FILE(GLOB srcfiles *cpp)
+FILE(GLOB headerfiles *h)
+add_executable(main ${srcfiles} ${headerfiles})
+target_link_libraries(main Hello)
+target_include_directories(main PRIVATE "${Hello_SOURCE_DIR}")
