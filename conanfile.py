@@ -34,9 +34,6 @@ class CppPlayground(ConanFile):
         if self._is_dev:
             self.requires('gtest/1.8.0@bincrafters/stable', 'private')
             self.options['gtest'].shared = False    # gtest has some unusual behavior when included statically
-        if self.settings.compiler == 'Visual Studio':
-            if self.settings.build_type == 'Debug':
-                self.options['gtest'].include_pdbs = True
 
     def build(self):
         cmake = CMake(self)
