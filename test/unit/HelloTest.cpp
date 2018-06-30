@@ -1,6 +1,6 @@
 #include "Hello.h"
 #include "gmock/gmock.h"
-#include "gsl/gsl"
+#include <gsl/gsl>
 
 using namespace ::testing;
 

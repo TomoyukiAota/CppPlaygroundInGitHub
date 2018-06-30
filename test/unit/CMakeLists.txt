@@ -5,11 +5,11 @@ add_executable(HelloTest ${srcfiles} ${headerfiles})
 
 target_link_libraries(HelloTest
     PRIVATE CONAN_PKG::gtest
-    PRIVATE CONAN_PKG::microsoft-gsl
     PRIVATE Hello
 )
 
 target_include_directories(HelloTest
+    PRIVATE "${CONAN_INCLUDE_DIRS_MICROSOFT-GSL}"
     PRIVATE "${Hello_SOURCE_DIR}"
 )
 
