@@ -5,9 +5,12 @@ add_executable(HelloTest ${srcfiles} ${headerfiles})
 
 target_link_libraries(HelloTest
     PRIVATE CONAN_PKG::gtest
+    PRIVATE CONAN_PKG::microsoft-gsl
     PRIVATE Hello
 )
 
-target_include_directories(HelloTest PRIVATE "${Hello_SOURCE_DIR}")
+target_include_directories(HelloTest
+    PRIVATE "${Hello_SOURCE_DIR}"
+)
 
 add_test(NAME HelloTest COMMAND HelloTest)

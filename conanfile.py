@@ -3,7 +3,7 @@ from conans import ConanFile, CMake
 
 class CppPlayground(ConanFile):
     name = "CppPlayground"
-    version = "0.01"
+    version = "0.0.1"
     url = "<Package recipe repository url here, for issues about the package>"
     description = "Playground for C++"
 
@@ -18,7 +18,8 @@ class CppPlayground(ConanFile):
     short_paths = True
     generators = "cmake"
     build_policy = 'missing'
-    exports_sources = 'CMakeLists.txt', 'cmake*', 'include*', 'src*', 'test*', 'tools*'
+    exports_sources = 'CMakeLists.txt', 'cmake*', 'include*', 'src*', 'test*'
+    requires = "microsoft-gsl/1.0.0@tomoyukiaota/testing"
 
     @property
     def _is_dev(self):
