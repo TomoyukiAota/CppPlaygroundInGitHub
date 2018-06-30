@@ -19,7 +19,7 @@ class CppPlayground(ConanFile):
     generators = "cmake"
     build_policy = 'missing'
     exports_sources = 'CMakeLists.txt', 'cmake*', 'include*', 'src*', 'test*'
-    requires = "microsoft-gsl/1.0.0@tomoyukiaota/testing"
+    requires = "gsl_microsoft/1.0.0@bincrafters/stable"
 
     @property
     def _is_dev(self):

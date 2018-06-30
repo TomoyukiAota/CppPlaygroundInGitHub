@@ -9,7 +9,7 @@ target_link_libraries(HelloTest
 )
 
 target_include_directories(HelloTest
-    PRIVATE "${CONAN_INCLUDE_DIRS_MICROSOFT-GSL}"
+    PRIVATE "${CONAN_INCLUDE_DIRS_GSL_MICROSOFT}"
     PRIVATE "${Hello_SOURCE_DIR}"
 )
 
